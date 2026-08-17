@@ -1,0 +1,4126 @@
+/* =====================================================
+   UNTITLED
+   STYLE.CSS — PART 1 / 5
+   GLOBAL FOUNDATION
+===================================================== */
+
+
+/* =====================================================
+   1. 全局变量
+===================================================== */
+
+:root {
+
+    --white: #f8f8f5;
+
+    --white-pure: #ffffff;
+
+    --black: #111111;
+
+    --gray: #777777;
+
+    --gray-light: #d8d8d3;
+
+    --green: #718765;
+
+    --green-dark: #52644c;
+
+    --brown: #8b6f55;
+
+    --paper: #f3f0e7;
+
+    --water: #e9eeeb;
+
+    --transition:
+        cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+/* =====================================================
+   2. 基础重置
+===================================================== */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    background:
+        var(--white);
+
+    scroll-behavior: auto;
+
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    background:
+        var(--white);
+
+    color:
+        var(--black);
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Microsoft YaHei",
+        sans-serif;
+
+    font-weight: 300;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+
+}
+
+
+/* =====================================================
+   3. 图片 / SVG
+===================================================== */
+
+img,
+svg {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+/* =====================================================
+   4. 链接
+===================================================== */
+
+a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+/* =====================================================
+   5. 主体
+===================================================== */
+
+#site {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =====================================================
+   6. 每一个普通页面
+===================================================== */
+
+.scene {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    min-height:
+        100svh;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =====================================================
+   7. 人生章节页面
+===================================================== */
+
+.life-section {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        100vh;
+
+    height:
+        100svh;
+
+    min-height:
+        680px;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =====================================================
+   8. 页面进度条
+===================================================== */
+
+.page-progress {
+
+    position:
+        fixed;
+
+    z-index:
+        9999;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        2px;
+
+    background:
+        transparent;
+
+    pointer-events:
+        none;
+
+}
+
+
+.page-progress span {
+
+    display:
+        block;
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    background:
+        var(--black);
+
+    transform:
+        scaleX(1);
+
+    transform-origin:
+        left center;
+
+}
+
+
+/* =====================================================
+   9. 全局颗粒感
+===================================================== */
+
+#grain {
+
+    position:
+        fixed;
+
+    z-index:
+        9990;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .035;
+
+    background-image:
+
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+
+}
+
+
+/* =====================================================
+   10. 粒子 Canvas
+===================================================== */
+
+#particles {
+
+    position:
+        fixed;
+
+    z-index:
+        0;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .25;
+
+}
+
+
+/* =====================================================
+   11. 首页
+===================================================== */
+
+.scene-intro {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--white);
+
+}
+
+
+/* =====================================================
+   12. 首页中央线稿
+===================================================== */
+
+.intro-line-art {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        min(42vw, 520px);
+
+    height:
+        min(42vw, 520px);
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity:
+        .12;
+
+    pointer-events:
+        none;
+
+}
+
+
+.intro-line-art svg {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+}
+
+
+.intro-line-art circle,
+.intro-line-art path {
+
+    fill:
+        none;
+
+    stroke:
+        var(--black);
+
+    stroke-width:
+        .8;
+
+}
+
+
+/* =====================================================
+   13. 首页文字
+===================================================== */
+
+.intro-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    text-align:
+        center;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom:
+        28px;
+
+    font-size:
+        10px;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        .35em;
+
+    color:
+        var(--gray);
+
+}
+
+
+.intro-content h1 {
+
+    font-size:
+        clamp(58px, 10vw, 150px);
+
+    line-height:
+        .9;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        -.055em;
+
+}
+
+
+.intro-content p {
+
+    margin-top:
+        34px;
+
+    font-size:
+        clamp(18px, 2vw, 28px);
+
+    line-height:
+        1;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        .25em;
+
+}
+
+
+/* =====================================================
+   14. 首页下滑提示
+===================================================== */
+
+.scroll-hint {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    bottom:
+        45px;
+
+    left:
+        50%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        var(--gray);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .35em;
+
+}
+
+
+.scroll-hint i {
+
+    position:
+        relative;
+
+    display:
+        block;
+
+    width:
+        1px;
+
+    height:
+        48px;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--gray-light);
+
+}
+
+
+.scroll-hint i::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -100%;
+
+    left:
+        0;
+
+    width:
+        1px;
+
+    height:
+        100%;
+
+    background:
+        var(--black);
+
+    animation:
+        scrollLine 2s
+        var(--transition)
+        infinite;
+
+}
+
+
+@keyframes scrollLine {
+
+    0% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(200%);
+
+    }
+
+}
+
+
+/* =====================================================
+   15. 通用章节编号
+===================================================== */
+
+.section-number {
+
+    display:
+        block;
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .3em;
+
+    color:
+        var(--gray);
+
+}
+
+
+/* =====================================================
+   16. 防止移动端点击高亮
+===================================================== */
+
+button,
+a,
+.word-button {
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+/* =====================================================
+   17. 手机端基础设置
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .scene,
+    .life-section {
+
+        min-height:
+            100svh;
+
+    }
+
+
+    .intro-line-art {
+
+        width:
+            78vw;
+
+        height:
+            78vw;
+
+        opacity:
+            .09;
+
+    }
+
+
+    .eyebrow {
+
+        margin-bottom:
+            20px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .intro-content h1 {
+
+        font-size:
+            clamp(52px, 18vw, 100px);
+
+    }
+
+
+    .intro-content p {
+
+        margin-top:
+            25px;
+
+        font-size:
+            17px;
+
+    }
+
+
+    .scroll-hint {
+
+        bottom:
+            30px;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNTITLED
+   STYLE.CSS — PART 2 / 5
+   WORD SELECTION + RECEIPT
+===================================================== */
+
+
+/* =====================================================
+   1. 第二页：词语选择
+===================================================== */
+
+.scene-words {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        80px 8vw;
+
+    background:
+        #f6f6f2;
+
+}
+
+
+/* =====================================================
+   2. 第二页标题
+===================================================== */
+
+.section-heading {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        min(700px, 100%);
+
+    text-align:
+        center;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(28px, 4vw, 52px);
+
+    line-height:
+        1.2;
+
+    font-weight:
+        300;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+.section-heading p {
+
+    margin-top:
+        20px;
+
+    font-size:
+        13px;
+
+    line-height:
+        2;
+
+    color:
+        var(--gray);
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+/* =====================================================
+   3. 词语区域
+===================================================== */
+
+.word-field {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        10px 14px;
+
+    width:
+        min(1050px, 100%);
+
+    margin-top:
+        65px;
+
+}
+
+
+/* =====================================================
+   4. 单个词语按钮
+===================================================== */
+
+.word-button {
+
+    position:
+        relative;
+
+    padding:
+        10px 17px;
+
+    border:
+        1px solid
+        rgba(17,17,17,.25);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.45);
+
+    color:
+        var(--black);
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    font-weight:
+        300;
+
+    letter-spacing:
+        .08em;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .45s var(--transition),
+        color .45s var(--transition),
+        border-color .45s var(--transition),
+        transform .45s var(--transition);
+
+}
+
+
+.word-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--black);
+
+    background:
+        var(--black);
+
+    color:
+        white;
+
+}
+
+
+.word-button.selected {
+
+    border-color:
+        var(--black);
+
+    background:
+        var(--black);
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================================
+   5. 选择状态
+===================================================== */
+
+.selection-status {
+
+    position:
+        absolute;
+
+    bottom:
+        42px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .22em;
+
+    color:
+        var(--gray);
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* =====================================================
+   6. 第二页装饰线
+===================================================== */
+
+.scene-words::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        15%;
+
+    left:
+        8%;
+
+    width:
+        84%;
+
+    height:
+        70%;
+
+    border:
+        1px solid
+        rgba(17,17,17,.055);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =====================================================
+   7. 小票页面
+===================================================== */
+
+.scene-receipt {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #fafaf7;
+
+    perspective:
+        1200px;
+
+}
+
+
+/* =====================================================
+   8. 小票页面标题
+===================================================== */
+
+.receipt-intro {
+
+    position:
+        absolute;
+
+    top:
+        12vh;
+
+    left:
+        8vw;
+
+    z-index:
+        4;
+
+}
+
+
+.receipt-intro p {
+
+    margin-top:
+        10px;
+
+    font-size:
+        12px;
+
+    color:
+        var(--gray);
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+/* =====================================================
+   9. 小票容器
+===================================================== */
+
+.receipt-wrapper {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        min(390px, 80vw);
+
+    transform:
+        rotate(-1.5deg);
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(0,0,0,.09)
+        );
+
+}
+
+
+/* =====================================================
+   10. 小票纸张
+===================================================== */
+
+.receipt-paper {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        560px;
+
+    padding:
+        38px 34px 45px;
+
+    background:
+        var(--paper);
+
+    color:
+        #222;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    box-shadow:
+        0 0 0 1px
+        rgba(0,0,0,.035);
+
+}
+
+
+/* =====================================================
+   11. 小票顶部锯齿
+===================================================== */
+
+.receipt-tear {
+
+    position:
+        absolute;
+
+    top:
+        -7px;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 5px,
+            var(--paper) 0
+        )
+        0 0 / 10px 10px
+        repeat-x;
+
+}
+
+
+/* =====================================================
+   12. 小票底部锯齿
+===================================================== */
+
+.receipt-paper::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    bottom:
+        -7px;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        10px;
+
+    background:
+        linear-gradient(
+            45deg,
+            transparent 5px,
+            var(--paper) 0
+        )
+        0 0 / 10px 10px
+        repeat-x;
+
+}
+
+
+/* =====================================================
+   13. 小票顶部信息
+===================================================== */
+
+.receipt-header {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        6px;
+
+    text-align:
+        center;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+.receipt-date {
+
+    margin-top:
+        5px;
+
+    color:
+        #888;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =====================================================
+   14. 小票分割线
+===================================================== */
+
+.receipt-rule {
+
+    width:
+        100%;
+
+    height:
+        1px;
+
+    margin:
+        23px 0;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            #777 0,
+            #777 4px,
+            transparent 4px,
+            transparent 8px
+        );
+
+    opacity:
+        .45;
+
+}
+
+
+/* =====================================================
+   15. 小票词语
+===================================================== */
+
+.receipt-items {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+    min-height:
+        100px;
+
+}
+
+
+.receipt-item {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.receipt-item-number {
+
+    color:
+        #999;
+
+}
+
+
+.receipt-item-word {
+
+    flex:
+        1;
+
+}
+
+
+.receipt-item-mark {
+
+    font-size:
+        10px;
+
+}
+
+
+/* =====================================================
+   16. 没有选择时
+===================================================== */
+
+.receipt-empty {
+
+    padding:
+        30px 0;
+
+    text-align:
+        center;
+
+    font-size:
+        12px;
+
+    color:
+        #777;
+
+    line-height:
+        2;
+
+}
+
+
+/* =====================================================
+   17. 小票数量
+===================================================== */
+
+.receipt-total {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    font-size:
+        11px;
+
+}
+
+
+.receipt-total strong {
+
+    font-weight:
+        normal;
+
+}
+
+
+/* =====================================================
+   18. 小票身份
+===================================================== */
+
+.receipt-identity {
+
+    text-align:
+        center;
+
+}
+
+
+.receipt-identity small {
+
+    display:
+        block;
+
+    margin-bottom:
+        13px;
+
+    color:
+        #999;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.receipt-identity div {
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.7;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+/* =====================================================
+   19. 小票底部
+===================================================== */
+
+.receipt-footer {
+
+    margin-top:
+        42px;
+
+    text-align:
+        center;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .3em;
+
+    color:
+        #888;
+
+}
+
+
+/* =====================================================
+   20. 小票下滑提示
+===================================================== */
+
+.receipt-scroll-hint {
+
+    position:
+        absolute;
+
+    right:
+        8vw;
+
+    bottom:
+        10vh;
+
+    font-size:
+        22px;
+
+    color:
+        #aaa;
+
+    animation:
+        receiptArrow 2s ease-in-out infinite;
+
+}
+
+
+@keyframes receiptArrow {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+        opacity:
+            .35;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =====================================================
+   21. 小票轻微漂浮
+===================================================== */
+
+.receipt-wrapper {
+
+    animation:
+        receiptFloat 5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes receiptFloat {
+
+    0%,
+    100% {
+
+        margin-top:
+            0;
+
+    }
+
+    50% {
+
+        margin-top:
+            -8px;
+
+    }
+
+}
+
+
+/* =====================================================
+   22. 手机适配
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    .scene-words {
+
+        padding:
+            70px 20px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            27px;
+
+        letter-spacing:
+            .06em;
+
+    }
+
+
+    .section-heading p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .word-field {
+
+        gap:
+            8px;
+
+        margin-top:
+            45px;
+
+        max-height:
+            48vh;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .word-button {
+
+        padding:
+            9px 13px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .selection-status {
+
+        bottom:
+            25px;
+
+    }
+
+
+    .receipt-intro {
+
+        top:
+            8vh;
+
+        left:
+            25px;
+
+    }
+
+
+    .receipt-intro p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .receipt-wrapper {
+
+        width:
+            min(340px, 82vw);
+
+    }
+
+
+    .receipt-paper {
+
+        min-height:
+            500px;
+
+        padding:
+            30px 25px 38px;
+
+    }
+
+
+    .receipt-scroll-hint {
+
+        right:
+            25px;
+
+        bottom:
+            8vh;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNTITLED
+   STYLE.CSS — PART 3 / 5
+   WATER + FALLING RECEIPT + FIRST LEAF
+===================================================== */
+
+
+/* =====================================================
+   1. PAGE 04
+   水面场景
+===================================================== */
+
+.scene-disappear {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #eef1ee;
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =====================================================
+   2. 水面背景
+===================================================== */
+
+.water-background {
+
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    opacity:
+        .75;
+
+}
+
+
+.water-background svg {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -5%;
+
+    width:
+        100%;
+
+    height:
+        70%;
+
+}
+
+
+.water-wave {
+
+    fill:
+        none;
+
+    stroke:
+        rgba(80,100,90,.16);
+
+    stroke-width:
+        1;
+
+}
+
+
+.wave-1 {
+
+    animation:
+        waterMoveOne
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+.wave-2 {
+
+    animation:
+        waterMoveTwo
+        12s
+        ease-in-out
+        infinite;
+
+}
+
+
+.wave-3 {
+
+    animation:
+        waterMoveThree
+        15s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes waterMoveOne {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-25px);
+
+    }
+
+}
+
+
+@keyframes waterMoveTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(30px);
+
+    }
+
+}
+
+
+@keyframes waterMoveThree {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-18px);
+
+    }
+
+}
+
+
+/* =====================================================
+   3. 坠落小票
+===================================================== */
+
+.floating-receipt {
+
+    position:
+        absolute;
+
+    z-index:
+        5;
+
+    top:
+        -25vh;
+
+    left:
+        50%;
+
+    width:
+        min(280px, 58vw);
+
+    min-height:
+        390px;
+
+    padding:
+        30px 24px;
+
+    transform:
+        translateX(-50%)
+        rotate(-4deg);
+
+    background:
+        var(--paper);
+
+    color:
+        #222;
+
+    box-shadow:
+        0 25px 50px
+        rgba(0,0,0,.12);
+
+    opacity:
+        0;
+
+    transform-origin:
+        center top;
+
+}
+
+
+.floating-receipt::before,
+.floating-receipt::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 5px,
+            var(--paper) 0
+        )
+        0 0 / 10px 10px
+        repeat-x;
+
+}
+
+
+.floating-receipt::before {
+
+    top:
+        -7px;
+
+}
+
+
+.floating-receipt::after {
+
+    bottom:
+        -7px;
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+.floating-receipt-content {
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size:
+        10px;
+
+    line-height:
+        2;
+
+}
+
+
+.floating-receipt-content > span {
+
+    display:
+        block;
+
+    text-align:
+        center;
+
+    letter-spacing:
+        .15em;
+
+}
+
+
+.floating-receipt-content > strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        20px;
+
+    text-align:
+        center;
+
+    font-weight:
+        normal;
+
+    letter-spacing:
+        .1em;
+
+}
+
+
+#fallingReceiptWords {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+.falling-word {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding-bottom:
+        5px;
+
+    border-bottom:
+        1px dashed
+        rgba(0,0,0,.25);
+
+}
+
+
+/* =====================================================
+   4. 小票湿润状态
+===================================================== */
+
+.floating-receipt.wet {
+
+    filter:
+        blur(.6px);
+
+    opacity:
+        .45;
+
+    transform:
+        translateX(-50%)
+        rotate(8deg)
+        scaleY(.96);
+
+}
+
+
+.floating-receipt.wet
+.floating-receipt-content {
+
+    opacity:
+        .6;
+
+}
+
+
+/* =====================================================
+   5. 水面涟漪
+===================================================== */
+
+.water-ripple {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    left:
+        50%;
+
+    top:
+        56%;
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    border:
+        1px solid
+        rgba(80,100,90,.35);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.2);
+
+    opacity:
+        0;
+
+}
+
+
+.water-ripple.active {
+
+    animation:
+        rippleExpand
+        3s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes rippleExpand {
+
+    0% {
+
+        width:
+            20px;
+
+        height:
+            20px;
+
+        opacity:
+            .8;
+
+    }
+
+    100% {
+
+        width:
+            520px;
+
+        height:
+            180px;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =====================================================
+   6. 消失文字
+===================================================== */
+
+.disappear-message {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    top:
+        28%;
+
+    left:
+        50%;
+
+    width:
+        min(600px, 82vw);
+
+    text-align:
+        center;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.disappear-message p {
+
+    margin:
+        10px 0;
+
+    font-size:
+        clamp(15px, 2vw, 22px);
+
+    line-height:
+        1.8;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        .12em;
+
+    color:
+        #58655d;
+
+}
+
+
+.disappear-message p:last-child {
+
+    margin-top:
+        25px;
+
+    font-size:
+        clamp(13px, 1.5vw, 17px);
+
+    color:
+        #858c87;
+
+}
+
+
+/* =====================================================
+   7. 第一片树叶
+===================================================== */
+
+.leaf-entry {
+
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    top:
+        53%;
+
+    left:
+        50%;
+
+    width:
+        min(100px, 17vw);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-10deg);
+
+    opacity:
+        0;
+
+    filter:
+        drop-shadow(
+            0 12px 15px
+            rgba(0,0,0,.08)
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+.leaf-entry svg {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+.leaf-body {
+
+    fill:
+        var(--green);
+
+    stroke:
+        var(--green-dark);
+
+    stroke-width:
+        1.2;
+
+}
+
+
+.leaf-vein {
+
+    fill:
+        none;
+
+    stroke:
+        rgba(235,240,226,.65);
+
+    stroke-width:
+        1;
+
+}
+
+
+.main-vein {
+
+    stroke:
+        rgba(240,244,230,.8);
+
+    stroke-width:
+        1.4;
+
+}
+
+
+/* =====================================================
+   8. 树叶轻微翻腾
+===================================================== */
+
+.leaf-entry.floating {
+
+    animation:
+        leafFloat
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes leafFloat {
+
+    0%,
+    100% {
+
+        margin-left:
+            0;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-10deg);
+
+    }
+
+    25% {
+
+        margin-left:
+            -15px;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(12deg);
+
+    }
+
+    50% {
+
+        margin-left:
+            8px;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-18deg);
+
+    }
+
+    75% {
+
+        margin-left:
+            18px;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(8deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   9. 页面进入后的叶子
+===================================================== */
+
+.leaf-entry.visible {
+
+    opacity:
+        1;
+
+}
+
+
+.leaf-entry.brown {
+
+    --green:
+        #856d55;
+
+    --green-dark:
+        #685340;
+
+}
+
+
+.leaf-entry.fade {
+
+    opacity:
+        .15;
+
+    filter:
+        grayscale(1)
+        blur(.4px);
+
+}
+
+
+/* =====================================================
+   10. 手机适配
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    .floating-receipt {
+
+        width:
+            min(250px, 68vw);
+
+        min-height:
+            350px;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .disappear-message {
+
+        top:
+            24%;
+
+    }
+
+
+    .disappear-message p {
+
+        line-height:
+            1.9;
+
+        letter-spacing:
+            .08em;
+
+    }
+
+
+    .leaf-entry {
+
+        width:
+            80px;
+
+    }
+
+
+    .water-background svg {
+
+        height:
+            55%;
+
+    }
+
+
+    .water-ripple {
+
+        top:
+            57%;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNTITLED
+   STYLE.CSS — PART 4 / 5
+   LIFE JOURNEY
+   SKY → BIRD → TREE → WATER → YOU
+===================================================== */
+
+
+/* =====================================================
+   1. 人生章节共同基础
+===================================================== */
+
+.life-section {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--white);
+
+}
+
+
+/* =====================================================
+   2. 环境线稿
+===================================================== */
+
+.environment-art {
+
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        min(65vw, 760px);
+
+    height:
+        min(65vw, 760px);
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity:
+        .075;
+
+    pointer-events:
+        none;
+
+}
+
+
+.environment-art svg {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+}
+
+
+/* 所有环境线稿 */
+
+.environment-art circle,
+.environment-art path,
+.environment-art ellipse {
+
+    fill:
+        none;
+
+    stroke:
+        var(--black);
+
+    stroke-width:
+        1;
+
+}
+
+
+/* =====================================================
+   3. 人生文字
+===================================================== */
+
+.life-copy {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        min(650px, 72vw);
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(50px);
+
+}
+
+
+.life-copy > span {
+
+    display:
+        block;
+
+    margin-bottom:
+        28px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .35em;
+
+    color:
+        var(--gray);
+
+}
+
+
+.life-copy h2 {
+
+    margin-bottom:
+        32px;
+
+    font-size:
+        clamp(35px, 5vw, 70px);
+
+    line-height:
+        1;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        .18em;
+
+}
+
+
+.life-copy p {
+
+    margin:
+        0 auto;
+
+    max-width:
+        650px;
+
+    font-size:
+        clamp(15px, 1.65vw, 22px);
+
+    line-height:
+        2.15;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        .08em;
+
+    color:
+        #333;
+
+}
+
+
+/* =====================================================
+   4. 右侧文字
+===================================================== */
+
+.copy-right {
+
+    margin-left:
+        35vw;
+
+    text-align:
+        left;
+
+}
+
+
+.copy-right p {
+
+    margin-left:
+        0;
+
+}
+
+
+/* =====================================================
+   5. 左侧文字
+===================================================== */
+
+.life-sky .life-copy,
+.life-tree .life-copy,
+.life-human .life-copy {
+
+    margin-right:
+        35vw;
+
+    text-align:
+        left;
+
+}
+
+
+.life-sky .life-copy p,
+.life-tree .life-copy p,
+.life-human .life-copy p {
+
+    margin-left:
+        0;
+
+}
+
+
+/* =====================================================
+   6. 天空
+===================================================== */
+
+.life-sky {
+
+    background:
+        #f9faf7;
+
+}
+
+
+.life-sky .environment-art {
+
+    opacity:
+        .06;
+
+}
+
+
+.life-sky .stars circle {
+
+    fill:
+        var(--black);
+
+    stroke:
+        none;
+
+}
+
+
+/* =====================================================
+   7. 飞鸟
+===================================================== */
+
+.life-bird {
+
+    background:
+        #f7f7f3;
+
+}
+
+
+.life-bird .bird-outline {
+
+    stroke-width:
+        1.1;
+
+    stroke:
+        #424842;
+
+}
+
+
+.life-bird .environment-art {
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-4deg);
+
+}
+
+
+/* =====================================================
+   8. 枯木
+===================================================== */
+
+.life-tree {
+
+    background:
+        #f3f2ec;
+
+}
+
+
+.life-tree .tree-line {
+
+    stroke:
+        #57554f;
+
+    stroke-width:
+        1.1;
+
+}
+
+
+.life-tree .environment-art {
+
+    opacity:
+        .12;
+
+}
+
+
+/* =====================================================
+   9. 流水
+===================================================== */
+
+.life-water {
+
+    background:
+        #eef2ef;
+
+}
+
+
+.life-water .flow-line {
+
+    stroke:
+        #68766d;
+
+    stroke-width:
+        1;
+
+}
+
+
+.life-water .environment-art {
+
+    width:
+        min(85vw, 950px);
+
+    opacity:
+        .11;
+
+}
+
+
+.life-water .flow-line {
+
+    stroke-dasharray:
+        900;
+
+    stroke-dashoffset:
+        900;
+
+}
+
+
+/* =====================================================
+   10. 水流动画
+===================================================== */
+
+.life-water.active
+.flow-line {
+
+    animation:
+        waterDrawing
+        3s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes waterDrawing {
+
+    to {
+
+        stroke-dashoffset:
+            0;
+
+    }
+
+}
+
+
+/* =====================================================
+   11. “你”
+===================================================== */
+
+.life-human {
+
+    background:
+        #f8f8f5;
+
+}
+
+
+.life-human .human-head,
+.life-human .human-body {
+
+    stroke:
+        #333;
+
+}
+
+
+.life-human .human-orbit {
+
+    stroke:
+        rgba(20,20,20,.55);
+
+    stroke-dasharray:
+        4 8;
+
+}
+
+
+.life-human .environment-art {
+
+    opacity:
+        .08;
+
+}
+
+
+/* =====================================================
+   12. 人物轨迹动画
+===================================================== */
+
+.life-human.active
+.human-orbit {
+
+    animation:
+        humanOrbit
+        12s
+        linear
+        infinite;
+
+}
+
+
+@keyframes humanOrbit {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+        transform-origin:
+            400px 420px;
+
+    }
+
+}
+
+
+/* =====================================================
+   13. 环境线稿进入动画
+===================================================== */
+
+.life-section.active
+.environment-art {
+
+    animation:
+        environmentReveal
+        2.2s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes environmentReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translate(-50%, -47%)
+            scale(.92);
+
+    }
+
+    to {
+
+        opacity:
+            .09;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   14. 文字进入
+===================================================== */
+
+.life-section.active
+.life-copy {
+
+    animation:
+        lifeTextReveal
+        1.8s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes lifeTextReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(50px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   15. 文字中的小停顿
+===================================================== */
+
+.life-section.active
+.life-copy h2 {
+
+    animation:
+        titleReveal
+        2s
+        var(--transition)
+        .15s
+        both;
+
+}
+
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        letter-spacing:
+            .35em;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        letter-spacing:
+            .18em;
+
+    }
+
+}
+
+
+/* =====================================================
+   16. 树叶颜色变化
+===================================================== */
+
+.life-section {
+
+    --leaf-color:
+        #718765;
+
+}
+
+
+.life-section:nth-of-type(6) {
+
+    --leaf-color:
+        #65795b;
+
+}
+
+
+.life-section:nth-of-type(7) {
+
+    --leaf-color:
+        #756a58;
+
+}
+
+
+.life-section:nth-of-type(8) {
+
+    --leaf-color:
+        #856c53;
+
+}
+
+
+.life-section:nth-of-type(9) {
+
+    --leaf-color:
+        #746557;
+
+}
+
+
+/* =====================================================
+   17. 树叶经过章节时的视觉颜色
+===================================================== */
+
+.leaf-entry.journey-green
+.leaf-body {
+
+    fill:
+        #718765;
+
+    stroke:
+        #52644c;
+
+}
+
+
+.leaf-entry.journey-darkgreen
+.leaf-body {
+
+    fill:
+        #63765a;
+
+    stroke:
+        #4e6048;
+
+}
+
+
+.leaf-entry.journey-brown
+.leaf-body {
+
+    fill:
+        #806a54;
+
+    stroke:
+        #665340;
+
+}
+
+
+.leaf-entry.journey-darkbrown
+.leaf-body {
+
+    fill:
+        #675849;
+
+    stroke:
+        #514438;
+
+}
+
+
+.leaf-entry.journey-faded
+.leaf-body {
+
+    fill:
+        #aaa79e;
+
+    stroke:
+        #8f8c84;
+
+}
+
+
+.leaf-entry.journey-faded
+.leaf-vein {
+
+    stroke:
+        rgba(255,255,255,.35);
+
+}
+
+
+/* =====================================================
+   18. 叶片进入下一章节时轻微透明
+===================================================== */
+
+.leaf-entry.journey-faded {
+
+    filter:
+        grayscale(.55)
+        drop-shadow(
+            0 10px 15px
+            rgba(0,0,0,.04)
+        );
+
+}
+
+
+/* =====================================================
+   19. 桌面端章节留白
+===================================================== */
+
+@media (min-width: 769px) {
+
+    .life-copy {
+
+        max-width:
+            600px;
+
+    }
+
+
+    .life-sky .life-copy,
+    .life-tree .life-copy,
+    .life-human .life-copy {
+
+        transform:
+            translate(-22vw, 50px);
+
+    }
+
+
+    .life-bird .life-copy,
+    .life-water .life-copy {
+
+        transform:
+            translate(22vw, 50px);
+
+    }
+
+}
+
+
+/* =====================================================
+   20. 手机端
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    .life-section {
+
+        min-height:
+            100svh;
+
+    }
+
+
+    .environment-art {
+
+        width:
+            115vw;
+
+        height:
+            115vw;
+
+        opacity:
+            .07;
+
+    }
+
+
+    .life-copy {
+
+        width:
+            78vw;
+
+        margin:
+            0 !important;
+
+        text-align:
+            center !important;
+
+        transform:
+            translateY(35px);
+
+    }
+
+
+    .life-copy h2 {
+
+        margin-bottom:
+            25px;
+
+        font-size:
+            37px;
+
+        letter-spacing:
+            .12em;
+
+    }
+
+
+    .life-copy p {
+
+        max-width:
+            100%;
+
+        font-size:
+            14px;
+
+        line-height:
+            2;
+
+        letter-spacing:
+            .04em;
+
+    }
+
+
+    .life-copy > span {
+
+        margin-bottom:
+            22px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .life-bird .environment-art {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-4deg);
+
+    }
+
+
+    .life-water .environment-art {
+
+        width:
+            135vw;
+
+        max-width:
+            none;
+
+    }
+
+
+    .life-human .environment-art {
+
+        width:
+            105vw;
+
+        height:
+            105vw;
+
+    }
+
+}
+
+
+/* =====================================================
+   UNTITLED
+   STYLE.CSS — PART 5 / 5
+   ENDING + FINAL RESPONSIVE
+===================================================== */
+
+
+/* =====================================================
+   1. 第十页：最终场景
+===================================================== */
+
+.scene-ending {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #f8f8f5;
+
+}
+
+
+/* =====================================================
+   2. 最后一片树叶
+===================================================== */
+
+.final-leaf {
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    top:
+        42%;
+
+    left:
+        50%;
+
+    width:
+        min(125px, 18vw);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-15deg);
+
+    opacity:
+        1;
+
+    filter:
+        drop-shadow(
+            0 18px 22px
+            rgba(0,0,0,.08)
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+.final-leaf svg {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+.final-leaf .leaf-body {
+
+    fill:
+        #856f56;
+
+    stroke:
+        #665441;
+
+    stroke-width:
+        1.1;
+
+}
+
+
+.final-leaf .leaf-vein {
+
+    stroke:
+        rgba(240,235,220,.65);
+
+    stroke-width:
+        1;
+
+}
+
+
+/* =====================================================
+   3. 最后一片叶子的下落
+===================================================== */
+
+.final-leaf.falling {
+
+    animation:
+        finalLeafFall
+        4s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes finalLeafFall {
+
+    0% {
+
+        top:
+            42%;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-15deg);
+
+    }
+
+    35% {
+
+        top:
+            53%;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(12deg);
+
+    }
+
+    65% {
+
+        top:
+            65%;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-8deg);
+
+    }
+
+    100% {
+
+        top:
+            73%;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(5deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   4. 叶子落地
+===================================================== */
+
+.final-leaf.landed {
+
+    top:
+        73%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(5deg);
+
+}
+
+
+/* =====================================================
+   5. 叶子逐渐褪色
+===================================================== */
+
+.final-leaf.fading {
+
+    animation:
+        leafFadeAway
+        7s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes leafFadeAway {
+
+    0% {
+
+        opacity:
+            1;
+
+        filter:
+            drop-shadow(
+                0 18px 22px
+                rgba(0,0,0,.08)
+            );
+
+    }
+
+    35% {
+
+        opacity:
+            .7;
+
+        filter:
+            grayscale(.2)
+            drop-shadow(
+                0 12px 15px
+                rgba(0,0,0,.04)
+            );
+
+    }
+
+    70% {
+
+        opacity:
+            .25;
+
+        filter:
+            grayscale(.7)
+            blur(.3px);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        filter:
+            grayscale(1)
+            blur(2px);
+
+    }
+
+}
+
+
+/* =====================================================
+   6. 最终文字
+===================================================== */
+
+.ending-text {
+
+    position:
+        absolute;
+
+    z-index:
+        5;
+
+    top:
+        27%;
+
+    left:
+        50%;
+
+    width:
+        min(800px, 85vw);
+
+    transform:
+        translate(-50%, 35px);
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+}
+
+
+.ending-text p {
+
+    margin:
+        8px 0;
+
+    font-size:
+        clamp(20px, 3vw, 38px);
+
+    line-height:
+        1.7;
+
+    font-weight:
+        200;
+
+    letter-spacing:
+        .15em;
+
+}
+
+
+.ending-text p:last-child {
+
+    margin-top:
+        5px;
+
+    font-size:
+        clamp(15px, 2vw, 25px);
+
+    color:
+        #666;
+
+}
+
+
+.ending-text.visible {
+
+    animation:
+        endingTextReveal
+        2.5s
+        var(--transition)
+        forwards;
+
+}
+
+
+@keyframes endingTextReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translate(-50%, 35px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+/* =====================================================
+   7. END
+===================================================== */
+
+.ending-scroll-hint {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    bottom:
+        35px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .4em;
+
+    color:
+        #aaa;
+
+    opacity:
+        .6;
+
+}
+
+
+/* =====================================================
+   8. 结尾背景的极细圆
+===================================================== */
+
+.scene-ending::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        min(65vw, 760px);
+
+    height:
+        min(65vw, 760px);
+
+    border:
+        1px solid
+        rgba(17,17,17,.035);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* =====================================================
+   9. 结尾背景第二层圆
+===================================================== */
+
+.scene-ending::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        min(42vw, 500px);
+
+    height:
+        min(42vw, 500px);
+
+    border:
+        1px solid
+        rgba(17,17,17,.025);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* =====================================================
+   10. 滚动时的过渡遮罩
+===================================================== */
+
+.page-transition {
+
+    position:
+        fixed;
+
+    z-index:
+        9998;
+
+    inset:
+        0;
+
+    background:
+        #f8f8f5;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.page-transition.active {
+
+    animation:
+        pageTransition
+        .8s
+        ease
+        forwards;
+
+}
+
+
+@keyframes pageTransition {
+
+    0% {
+
+        opacity:
+            0;
+
+    }
+
+    45% {
+
+        opacity:
+            .18;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =====================================================
+   11. 选中词语后的视觉反馈
+===================================================== */
+
+.word-button.selected::after {
+
+    content:
+        "✓";
+
+    display:
+        inline-block;
+
+    margin-left:
+        7px;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =====================================================
+   12. 页面被激活时的基础效果
+===================================================== */
+
+.scene.active {
+
+    isolation:
+        isolate;
+
+}
+
+
+/* =====================================================
+   13. 桌面端细节
+===================================================== */
+
+@media (min-width: 769px) {
+
+
+    .scene-ending {
+
+        min-height:
+            100vh;
+
+    }
+
+
+    .final-leaf {
+
+        width:
+            130px;
+
+    }
+
+
+    .ending-text p {
+
+        letter-spacing:
+            .18em;
+
+    }
+
+
+}
+
+
+/* =====================================================
+   14. 手机端结尾
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    .scene-ending {
+
+        min-height:
+            100svh;
+
+    }
+
+
+    .final-leaf {
+
+        width:
+            82px;
+
+        top:
+            43%;
+
+    }
+
+
+    .ending-text {
+
+        top:
+            28%;
+
+        width:
+            82vw;
+
+    }
+
+
+    .ending-text p {
+
+        font-size:
+            21px;
+
+        line-height:
+            1.8;
+
+        letter-spacing:
+            .1em;
+
+    }
+
+
+    .ending-text p:last-child {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.9;
+
+    }
+
+
+    .scene-ending::before {
+
+        width:
+            115vw;
+
+        height:
+            115vw;
+
+    }
+
+
+    .scene-ending::after {
+
+        width:
+            80vw;
+
+        height:
+            80vw;
+
+    }
+
+
+    .ending-scroll-hint {
+
+        bottom:
+            25px;
+
+    }
+
+}
+
+
+/* =====================================================
+   15. 超小屏幕
+===================================================== */
+
+@media (max-width: 380px) {
+
+
+    .word-button {
+
+        padding:
+            8px 11px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .receipt-wrapper {
+
+        width:
+            84vw;
+
+    }
+
+
+    .receipt-paper {
+
+        min-height:
+            470px;
+
+    }
+
+
+    .life-copy {
+
+        width:
+            82vw;
+
+    }
+
+
+    .life-copy h2 {
+
+        font-size:
+            33px;
+
+    }
+
+
+    .life-copy p {
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* =====================================================
+   16. 减少动画模式
+   如果用户系统设置了减少动态效果，
+   网站仍然保持完整内容
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
