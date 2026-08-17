@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Untitled — Who am I?"
+    >
+
+    <title>Untitled — Who am I?</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         全局背景
+    ========================================== -->
+
+    <div
+        id="grain"
+        aria-hidden="true"
+    ></div>
+
+
+    <canvas
+        id="particles"
+        aria-hidden="true"
+    ></canvas>
+
+
+    <!-- 页面滚动进度 -->
+
+    <div
+        class="page-progress"
+        aria-hidden="true"
+    >
+
+        <span id="progressBar"></span>
+
+    </div>
+
+
+
+    <!-- =========================================
+         网站主体
+    ========================================== -->
+
+    <main id="site">
+
+
+
+        <!-- =====================================
+             PAGE 01
+             INTRO
+        ====================================== -->
+
+        <section
+            class="scene scene-intro"
+            id="intro"
+        >
+
+
+            <!-- 中央线稿 -->
+
+            <div
+                class="intro-line-art"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 500 500"
+                >
+
+                    <circle
+                        cx="250"
+                        cy="250"
+                        r="175"
+                    />
+
+                    <circle
+                        cx="250"
+                        cy="250"
+                        r="110"
+                    />
+
+                    <path
+                        d="
+                        M250 30
+                        C250 120 250 180 250 250
+                        C250 320 250 380 250 470
+                        "
+                    />
+
+                    <path
+                        d="
+                        M30 250
+                        C120 250 180 250 250 250
+                        C320 250 380 250 470 250
+                        "
+                    />
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- 首页文字 -->
+
+            <div class="intro-content">
+
+
+                <div class="eyebrow">
+
+                    AN UNTITLED EXPERIENCE
+
+                </div>
+
+
+                <h1>
+
+                    Untitled
+
+                </h1>
+
+
+                <p>
+
+                    Who am I?
+
+                </p >
+
+
+            </div>
+
+
+
+            <!-- 下滑提示 -->
+
+            <div
+                class="scroll-hint"
+                aria-hidden="true"
+            >
+
+                <span>
+
+                    SCROLL
+
+                </span>
+
+
+                <i></i>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 02
+             WORD SELECTION
+        ====================================== -->
+
+        <section
+            class="scene scene-words"
+            id="words"
+        >
+
+
+            <div class="section-heading">
+
+
+                <span class="section-number">
+
+                    01
+
+                </span>
+
+
+                <h2>
+
+                    请选择符合你的词语
+
+                </h2>
+
+
+                <p>
+
+                    没有正确答案。
+                    <br>
+                    你可以选择任意数量。
+
+                </p >
+
+
+            </div>
+
+
+
+            <!--
+
+                JavaScript
+                会把所有词语
+                自动放到这里
+
+            -->
+
+            <div
+                class="word-field"
+                id="wordField"
+            ></div>
+
+
+
+            <!-- 当前选择数量 -->
+
+            <div
+                class="selection-status"
+                id="selectionStatus"
+            >
+
+                还没有选择
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 03
+             RECEIPT
+        ====================================== -->
+
+        <section
+            class="scene scene-receipt"
+            id="receiptScene"
+        >
+
+
+            <div class="receipt-intro">
+
+
+                <span class="section-number">
+
+                    02
+
+                </span>
+
+
+                <p>
+
+                    这是你刚刚选择的自己。
+
+                </p >
+
+
+            </div>
+
+
+
+            <!-- 小票 -->
+
+            <div
+                class="receipt-wrapper"
+                id="receiptWrapper"
+            >
+
+
+                <div class="receipt-paper">
+
+
+                    <!-- 顶部锯齿 -->
+
+                    <div class="receipt-tear"></div>
+
+
+
+                    <!-- 小票标题 -->
+
+                    <header class="receipt-header">
+
+
+                        <div>
+
+                            UNTITLED STORE
+
+                        </div>
+
+
+                        <div>
+
+                            SELF RECORD
+
+                        </div>
+
+
+                        <div class="receipt-date">
+
+                            DATE / UNKNOWN
+
+                        </div>
+
+
+                    </header>
+
+
+
+                    <div class="receipt-rule"></div>
+
+
+
+                    <!-- 用户选择的词语 -->
+
+                    <div
+                        class="receipt-items"
+                        id="receiptItems"
+                    >
+
+                        <!--
+                            JS会自动生成
+                        -->
+
+                    </div>
+
+
+
+                    <div class="receipt-rule"></div>
+
+
+
+                    <!-- 数量 -->
+
+                    <div class="receipt-total">
+
+
+                        <span>
+
+                            ITEMS
+
+                        </span>
+
+
+                        <strong
+                            id="receiptCount"
+                        >
+
+                            00
+
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <div class="receipt-rule"></div>
+
+
+
+                    <!-- 最终身份 -->
+
+                    <div class="receipt-identity">
+
+
+                        <small>
+
+                            I AM
+
+                        </small>
+
+
+                        <div
+                            id="receiptIdentity"
+                        >
+
+                            我，似乎有点不同
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- 小票底部 -->
+
+                    <div class="receipt-footer">
+
+                        THANK YOU
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- 小票页提示 -->
+
+            <div
+                class="receipt-scroll-hint"
+                aria-hidden="true"
+            >
+
+                ↓
+
+            </div>
+
+
+        </section>
+
+
+              <!-- =====================================
+             PAGE 04
+             RECEIPT DISAPPEARS
+        ====================================== -->
+
+        <section
+            class="scene scene-disappear"
+            id="disappear"
+        >
+
+
+            <!-- ================================
+                 水面
+            ================================= -->
+
+            <div
+                class="water-background"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 1200 600"
+                    preserveAspectRatio="none"
+                >
+
+                    <path
+                        class="water-wave wave-1"
+                        d="
+                        M0 310
+                        C120 270 240 350 360 310
+                        C480 270 600 350 720 310
+                        C840 270 960 350 1080 310
+                        C1140 290 1170 300 1200 310
+                        "
+                    />
+
+                    <path
+                        class="water-wave wave-2"
+                        d="
+                        M0 360
+                        C150 320 270 400 420 360
+                        C570 320 690 400 840 360
+                        C990 320 1080 390 1200 350
+                        "
+                    />
+
+                    <path
+                        class="water-wave wave-3"
+                        d="
+                        M0 410
+                        C180 370 300 450 480 410
+                        C660 370 780 450 960 410
+                        C1080 385 1140 400 1200 410
+                        "
+                    />
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- ================================
+                 坠落的小票
+            ================================= -->
+
+            <div
+                class="floating-receipt"
+                id="fallingReceipt"
+            >
+
+
+                <div class="floating-receipt-content">
+
+
+                    <span>
+
+                        UNTITLED STORE
+
+                    </span>
+
+
+                    <strong>
+
+                        SELF RECORD
+
+                    </strong>
+
+
+                    <div
+                        id="fallingReceiptWords"
+                    ></div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================================
+                 水面涟漪
+            ================================= -->
+
+            <div
+                class="water-ripple"
+                id="waterRipple"
+                aria-hidden="true"
+            ></div>
+
+
+
+            <!-- ================================
+                 消失文字
+            ================================= -->
+
+            <div
+                class="disappear-message"
+                id="disappearMessage"
+            >
+
+
+                <p>
+
+                    我消失了
+
+                </p >
+
+
+                <p>
+
+                    藏匿在混沌的社会中
+
+                </p >
+
+
+                <p>
+
+                    有人会找到我吗……
+
+                </p >
+
+
+            </div>
+
+
+
+            <!-- ================================
+                 第一片树叶
+            ================================= -->
+
+            <div
+                class="leaf-entry"
+                id="leafEntry"
+            >
+
+
+                <svg
+                    viewBox="0 0 300 500"
+                    aria-hidden="true"
+                >
+
+
+                    <!-- 叶片主体 -->
+
+                    <path
+                        class="leaf-body"
+                        d="
+                        M150 18
+                        C230 65 270 150 250 250
+                        C230 355 190 425 150 475
+                        C110 425 70 355 50 250
+                        C30 150 70 65 150 18
+                        Z
+                        "
+                    />
+
+
+
+                    <!-- 主叶脉 -->
+
+                    <path
+                        class="leaf-vein main-vein"
+                        d="
+                        M150 45
+                        C150 170 150 300 150 455
+                        "
+                    />
+
+
+
+                    <!-- 侧叶脉 -->
+
+                    <path
+                        class="leaf-vein"
+                        d="
+                        M150 125
+                        L92 76
+
+                        M150 170
+                        L218 112
+
+                        M150 225
+                        L78 182
+
+                        M150 280
+                        L222 235
+
+                        M150 340
+                        L86 314
+
+                        M150 395
+                        L205 375
+                        "
+                    />
+
+
+                </svg>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 05
+             SKY
+        ====================================== -->
+
+        <section
+            class="life-section life-sky"
+            id="sky"
+            data-stage="0"
+        >
+
+
+            <!-- ================================
+                 环境线稿
+            ================================= -->
+
+            <div
+                class="environment-art"
+                aria-hidden="true"
+            >
+
+
+                <svg
+                    viewBox="0 0 800 800"
+                >
+
+
+                    <circle
+                        cx="400"
+                        cy="400"
+                        r="270"
+                    />
+
+
+                    <circle
+                        cx="400"
+                        cy="400"
+                        r="180"
+                    />
+
+
+                    <circle
+                        cx="400"
+                        cy="400"
+                        r="90"
+                    />
+
+
+
+                    <!-- 星星 -->
+
+                    <g class="stars">
+
+
+                        <circle
+                            cx="160"
+                            cy="190"
+                            r="2"
+                        />
+
+
+                        <circle
+                            cx="630"
+                            cy="180"
+                            r="2"
+                        />
+
+
+                        <circle
+                            cx="690"
+                            cy="490"
+                            r="1.5"
+                        />
+
+
+                        <circle
+                            cx="120"
+                            cy="550"
+                            r="1.5"
+                        />
+
+
+                        <circle
+                            cx="530"
+                            cy="650"
+                            r="2"
+                        />
+
+
+                    </g>
+
+
+                </svg>
+
+
+            </div>
+
+
+
+            <!-- ================================
+                 文字
+            ================================= -->
+
+            <div class="life-copy">
+
+
+                <span>
+
+                    03 / 05
+
+                </span>
+
+
+                <h2>
+
+                    我是天空
+
+                </h2>
+
+
+                <p>
+
+                    我偷偷拥抱着整片星空
+
+                </p >
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 06
+             BIRD
+        ====================================== -->
+
+        <section
+            class="life-section life-bird"
+            id="bird"
+            data-stage="1"
+        >
+
+
+            <!-- 飞鸟线稿 -->
+
+            <div
+                class="environment-art"
+                aria-hidden="true"
+            >
+
+
+                <svg
+                    viewBox="0 0 800 800"
+                >
+
+
+                    <path
+                        class="bird-outline"
+                        d="
+                        M120 390
+                        C230 280 300 310 400 390
+                        C500 310 570 280 680 390
+                        "
+                    />
+
+
+                    <path
+                        class="bird-outline"
+                        d="
+                        M250 410
+                        C300 450 350 450 400 390
+                        C450 450 500 450 550 410
+                        "
+                    />
+
+
+                </svg>
+
+
+            </div>
+
+
+
+            <!-- 文字 -->
+
+            <div
+                class="life-copy copy-right"
+            >
+
+
+                <span>
+
+                    04 / 05
+
+                </span>
+
+
+                <h2>
+
+                    我是飞鸟
+
+                </h2>
+
+
+                <p>
+
+                    我能飞向远方，但我的羽翼不太干净，
+                    绒毛间夹杂着些许尘土，
+                    渐渐地将我压倒在从前生活的那片土地上。
+
+                </p >
+
+
+            </div>
+
+
+        </section>
+        
+        
+                <!-- =====================================
+             PAGE 07
+             DEAD TREE
+        ====================================== -->
+
+        <section
+            class="life-section life-tree"
+            id="tree"
+            data-stage="2"
+        >
+
+
+            <!-- ================================
+                 枯木线稿
+            ================================= -->
+
+            <div
+                class="environment-art"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 800 800"
+                >
+
+                    <path
+                        class="tree-line"
+                        d="
+                        M400 730
+                        C395 600 405 480 400 300
+
+                        M400 440
+                        C330 380 270 310 190 240
+
+                        M400 500
+                        C475 430 550 360 650 300
+
+                        M400 350
+                        C355 300 330 250 310 170
+
+                        M400 390
+                        C445 330 490 270 510 180
+                        "
+                    />
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- ================================
+                 枯木文字
+            ================================= -->
+
+            <div
+                class="life-copy"
+            >
+
+                <span>
+
+                    05 / 05
+
+                </span>
+
+
+                <h2>
+
+                    我是枯木
+
+                </h2>
+
+
+                <p>
+
+                    我身上的泪快流干了。
+                    <br>
+                    我的未来，你在哪里？
+
+                </p >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 08
+             WATER
+        ====================================== -->
+
+        <section
+            class="life-section life-water"
+            id="water"
+            data-stage="3"
+        >
+
+
+            <!-- ================================
+                 流水线稿
+            ================================= -->
+
+            <div
+                class="environment-art"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 800 800"
+                >
+
+
+                    <path
+                        class="flow-line"
+                        d="
+                        M80 260
+                        C220 130 320 390 440 260
+                        C560 130 670 390 760 260
+                        "
+                    />
+
+
+                    <path
+                        class="flow-line"
+                        d="
+                        M40 390
+                        C180 250 300 500 430 390
+                        C560 280 670 490 790 360
+                        "
+                    />
+
+
+                    <path
+                        class="flow-line"
+                        d="
+                        M80 520
+                        C200 430 300 600 430 500
+                        C570 390 670 580 760 500
+                        "
+                    />
+
+
+                    <path
+                        class="flow-line"
+                        d="
+                        M20 610
+                        C160 520 290 680 420 590
+                        C550 500 670 660 800 570
+                        "
+                    />
+
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- ================================
+                 流水文字
+            ================================= -->
+
+            <div
+                class="life-copy copy-right"
+            >
+
+                <span>
+
+                    06 / 05
+
+                </span>
+
+
+                <h2>
+
+                    我是流水
+
+                </h2>
+
+
+                <p>
+
+                    因为它们都要奔向大海，
+                    所以我也在流动。
+                    <br><br>
+                    但我想成为一滴叛逆的水，
+                    不随命运的洪流而逝去，
+                    哪怕下一步只剩死亡。
+
+                </p >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 09
+             YOU
+        ====================================== -->
+
+        <section
+            class="life-section life-human"
+            id="human"
+            data-stage="4"
+        >
+
+
+            <!-- ================================
+                 人的线稿
+            ================================= -->
+
+            <div
+                class="environment-art"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 800 800"
+                >
+
+
+                    <!-- 人的头部 -->
+
+                    <circle
+                        class="human-head"
+                        cx="400"
+                        cy="270"
+                        r="72"
+                    />
+
+
+                    <!-- 人的身体 -->
+
+                    <path
+                        class="human-body"
+                        d="
+                        M260 690
+                        C280 500 315 430 400 430
+                        C485 430 520 500 540 690
+                        "
+                    />
+
+
+                    <!-- 环绕的轨迹 -->
+
+                    <circle
+                        class="human-orbit"
+                        cx="400"
+                        cy="420"
+                        r="270"
+                    />
+
+
+                    <!-- 第二层轨迹 -->
+
+                    <ellipse
+                        class="human-orbit"
+                        cx="400"
+                        cy="420"
+                        rx="330"
+                        ry="170"
+                    />
+
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- ================================
+                 最后一段文字
+            ================================= -->
+
+            <div
+                class="life-copy"
+            >
+
+                <span>
+
+                    07 / 05
+
+                </span>
+
+
+                <h2>
+
+                    我是你
+
+                </h2>
+
+
+                <p>
+
+                    我是千千万万个你。
+                    我在努力生活，在思考人生。
+                    <br><br>
+
+                    我正在被命运裹挟，
+                    我渺小如尘土，
+                    渺小到这个世界看不见我。
+                    <br><br>
+
+                    不过……
+
+                </p >
+
+            </div>
+
+
+        </section>
+
+
+                <!-- =====================================
+             PAGE 10
+             ENDING
+        ====================================== -->
+
+        <section
+            class="scene scene-ending"
+            id="ending"
+        >
+
+
+            <!-- ================================
+                 最后一片树叶
+            ================================= -->
+
+            <div
+                class="final-leaf"
+                id="finalLeaf"
+                aria-hidden="true"
+            >
+
+                <svg
+                    viewBox="0 0 300 500"
+                >
+
+
+                    <!-- 叶片主体 -->
+
+                    <path
+                        class="leaf-body"
+                        d="
+                        M150 18
+                        C230 65 270 150 250 250
+                        C230 355 190 425 150 475
+                        C110 425 70 355 50 250
+                        C30 150 70 65 150 18
+                        Z
+                        "
+                    />
+
+
+                    <!-- 主叶脉 -->
+
+                    <path
+                        class="leaf-vein"
+                        d="
+                        M150 45
+                        C150 170 150 300 150 455
+                        "
+                    />
+
+
+                    <!-- 侧叶脉 -->
+
+                    <path
+                        class="leaf-vein"
+                        d="
+                        M150 125
+                        L92 76
+
+                        M150 170
+                        L218 112
+
+                        M150 225
+                        L78 182
+
+                        M150 280
+                        L222 235
+
+                        M150 340
+                        L86 314
+
+                        M150 395
+                        L205 375
+                        "
+                    />
+
+
+                </svg>
+
+            </div>
+
+
+
+            <!-- ================================
+                 最终文字
+            ================================= -->
+
+            <div
+                class="ending-text"
+                id="endingText"
+            >
+
+                <p>
+
+                    我普通
+
+                </p >
+
+
+                <p>
+
+                    可是我是唯一一个我
+
+                </p >
+
+            </div>
+
+
+
+            <!-- ================================
+                 最后提示
+            ================================= -->
+
+            <div
+                class="ending-scroll-hint"
+                id="endingScrollHint"
+            >
+
+                <span>
+
+                    END
+
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JavaScript
+    ========================================== -->
+
+    <script
+        src="script.js"
+        defer
+    ></script>
+
+
+</body>
+
+</html>
